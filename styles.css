@@ -1,0 +1,678 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.menu {
+    background: white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.menu ul li {
+    display: flex;
+    align-items: center;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+    font-size: 16px;
+}
+
+.menu a:hover {
+    color: #a8dadc;
+}
+
+
+
+.search {
+    display: flex;
+    align-items: center;
+    background: white;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 5px 10px;
+    overflow: hidden;
+}
+
+.search input {
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding: 5px;
+    width: 150px;
+}
+
+.search button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.search img {
+    width: 18px;
+    height: 18px;
+}
+
+.search-results {
+    text-align: center;
+    padding: 100px;
+}
+
+.search-results h1 {
+    font-size: 2rem;
+}
+
+.search-results p {
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+
+.no-results {
+    color: red;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: clamp(2rem, 5vw, 4rem);
+}
+
+p {
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+}
+
+.hero {
+    background: url('sfondo.jpg') no-repeat center/cover;
+    height: 100vh;    
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    color: white;
+    font-weight: bold;
+    font-size:xx-large;
+}
+
+.hero::before {
+    content: ""; /* Pseudo-elemento per creare un livello sopra l'immagine */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(176, 176, 176, 0.3).3;
+}
+
+.hero-text {
+    position: relative;
+    font-size: 2rem;
+    z-index: 1;
+    max-width: 1000px;
+    padding: 20px;
+    box-shadow: 0px 2px 5px rgba(0.5, 0.5, 0.5, 0.5);
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.hero-text p {
+    text-align: left;
+}
+
+/* Sezione Intro HOME */
+.intro {
+    text-align: center;
+    margin: 70px;
+    border-radius: 30px;
+    width: 90%;
+    max-width: 1000px;
+    margin: 2rem auto; /* Centro la box */
+    background: #f8f8f8; /* Colore di sfondo chiaro */
+    border-radius: 15px; /* Angoli arrotondati */
+    overflow: hidden; /* Impedisce che il contenuto esca */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ombra leggera */
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem; /* Distanza tra gli elementi */
+    
+}
+
+.text p {
+    margin: 20px;
+}
+
+.intro h2 {
+    font-size: 50px;
+    font-weight: bold;
+    
+    
+}
+
+
+.intro p {
+    text-align: left;
+}
+
+.intro ul {
+    list-style: none;
+    padding: 0;
+}
+
+.intro ul li {
+    font-size: 30px;
+    margin: 20px 0;
+}
+
+
+.intro h2:hover {
+    text-decoration: none;
+}
+
+.keywords {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 20px;
+  ;
+}
+
+.keywords p {
+    background: #8e8e8e;
+    color: white;
+    padding: 8px 25px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 20px;
+    max-width: 600px;
+    margin-top: 30%;
+    margin: auto;
+}
+
+.gallery-item {
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+}
+
+.gallery-item a {
+    text-decoration: none;
+}
+
+.gallery-item span {
+    display: inline-block;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.gallery-item span:hover {
+    background: rgba(255, 255, 255, 0.7);
+    color: black;
+}
+
+.gallery-item.large {
+    grid-column: span 2;
+}
+
+.intro h2 a {
+    text-decoration: none;
+    color: #000; 
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Cambia colore quando il mouse passa sopra */
+.intro h2 a:hover {
+    color: #0077cc;
+}
+
+/* Stile per il contenitore principale */
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px; /* Distanza dalla sezione hero */
+}
+
+/* Stile per la sezione dei parchi */
+.parchi-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    max-width: 900px; /* Larghezza massima */
+}
+
+
+/* Stile per ogni box del parco */
+.parco {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f8f8f8;
+    border-radius: 12px;
+    padding: 15px;
+    margin: 15px 0;
+    width: 100%;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1); /* Ombra leggera */
+}
+
+/* Stile per il testo dentro il box */
+.parco h2 {
+    font-size: 1.4em;
+    font-weight: bold;
+    font-family: "Arial", sans-serif;
+    max-width: 50%;
+    
+}
+
+
+
+
+
+
+/* Stile per le immagini */
+.parco img {
+    width: 250px;
+    height: 150px;
+    object-fit: cover; /* Mantiene le proporzioni senza distorsioni */
+    border-radius: 12px;
+    margin-left: 20px;
+}
+
+/* Rimuove il sottolineato dai link dentro h2 e imposta il colore */
+.parco h2 a {
+    text-decoration: underline;
+    color: #000;     
+    transition: color 0.3s ease-in-out;
+}
+
+/* Cambia colore quando il mouse passa sopra */
+.parco h2 a:hover {
+    color: #0077cc;
+    text-decoration: none;
+}
+
+
+@media (max-width: 1024px) {
+    .parco {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .parco h2 {
+        max-width: 100%;
+        font-size: 1.4em;
+    }
+
+    .parco img {
+        margin: 15px 0;
+        width: 80%;
+        max-width: 320px;
+        height: auto;
+    }
+}
+
+/* Responsive per schermi piccoli */
+@media (max-width: 768px) {
+    .parco {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .parco h2 {
+        max-width: 100%;
+    }
+
+    .parco img {
+        margin: 10px 0;
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+.hero-etna {
+    background: url('Inverno\ Etna.jpg') no-repeat center/cover;
+    height: 100vh;    
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    color: white;
+    font-weight: bold;
+    font-size:xx-large;
+}
+
+.hero-pollino {
+    background: url('monte\ pollino.jpg') no-repeat center/cover;
+    height: 100vh;    
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    color: white;
+    font-weight: bold;
+    font-size:xx-large;
+}
+
+.hero-bellunesi {
+    background: url('dolomiti\ belllunesi.jpg') no-repeat center/cover;
+    height: 100vh;    
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    color: white;
+    font-weight: bold;
+    font-size:xx-large;
+}
+
+.hero-paradiso {
+    background: url('gran\ paradiso.jpg') no-repeat center/cover;
+    height: 100vh;    
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    color: white;
+    font-weight: bold;
+    font-size:xx-large;
+}
+
+/* Stile per l'intestazione */
+.hero-flora {
+    text-align: left;    
+    padding: 50px 20px;
+    color: black;
+}
+
+.hero-flora h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+.hero-flora p {
+    font-size: 1.2em;
+}
+
+/* Sezione contenuti */
+.flora-content {
+    max-width: 900px;
+    margin: auto;
+    padding: 50px;
+}
+
+.flora-text a {
+    max-width: 600px;
+    margin: 50px auto;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    padding: 5px;
+    transition: 0.3s;
+    text-size-adjust: auto;
+    
+}
+
+
+
+/* Box di contenuto FLORA E FAUNA*/
+.flora-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f8f8f8;
+    border-radius: 12px;
+    padding: 15px;
+    margin: 15px 0;
+    width: 100%;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1); /* Ombra leggera */
+}
+
+.flora-image img {
+    width: 350px;
+    height: 350px;
+    border-radius: 10%;
+}
+
+.flora-text {
+    padding: 15px;
+}
+
+.flora-text h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.flora-text h2 a {
+   
+    text-decoration: underline;
+}
+
+.flora-text a:hover {
+    text-decoration: none;
+    color: #0077cc;
+}
+
+
+.flora-text p {
+    font-size: 1em;
+    text-align: left;
+}
+
+/* parchi testi */
+.info {
+    max-width: 800px;
+    text-align: center;
+    margin: 50px auto;
+    padding: 50px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.info p {
+    text-align: left;
+}
+    
+.info img {
+    width: 600px;
+    height: 550px;
+    object-fit: cover; /* Mantiene le proporzioni senza distorsioni */
+    border-radius: 12px;
+    margin-left: 20px;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.info h2 {
+    font-size: 36px;
+}
+
+/* Box bianco con ombre per l'immagine su attività */
+.activity {
+    width: 90%;
+    max-width: 1000px;
+    margin: 2rem auto; /* Centro la box */
+    background: #f8f8f8; /* Colore di sfondo chiaro */
+    border-radius: 15px; /* Angoli arrotondati */
+    overflow: hidden; /* Impedisce che il contenuto esca */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ombra leggera */
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem; /* Distanza tra gli elementi */
+}
+
+.activity img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px; /* Bordo arrotondato per l'immagine */
+}
+
+.activity h2 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: bold;
+    color: #333;
+}
+
+.activity p {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: #555;
+    line-height: 1.6;
+    text-align: left;
+}
+
+  
+.footer {
+    background-color: #e3f2fd;    
+    justify-content: center; /* Centro orizzontale */
+    align-items: center; /* Centro verticale */
+    padding: 2rem;
+    width: auto;
+    min-height: 100px; /* Altezza minima */
+}
+
+.footer p {
+    font-weight: bold;
+}
+
+.footer a {
+    text-decoration: underline;
+}
+
+.footer a:hover {
+    text-decoration: dashed;
+    background-color: #000;
+    color: white;
+}
+
+.footer-content {
+    text-align: center; /* Centra il contenuto */
+    display: flex;
+    flex-direction: column; /* Dispone il testo e il pulsante in colonna */
+    align-items: center; 
+}
+
+.footer-content p {
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-align: center;   
+}
+
+.footer img {
+    width: 10px;
+    height: auto;
+}
+
+.footer h4 {
+    font-size: 10px;
+    margin-top: 40px;
+    
+}
+
+.explore-btn {
+    display: inline-block;
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 2px solid black;
+    border-radius: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-top: 10px; /* Distanza dal testo */
+}
+
+.esplore-btn:hover {
+    background: black;
+    color: white;
+}
+
+.search-results {
+    
+    max-width: 600px;
+    margin: 150px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+.search-results:hover {
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.search-results a {
+    display: inline-block;
+    background: black;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 15px;
+    text-decoration: none;
+    transition: 0.3s;
+   ;
+}
+
+.search-results a:hover {
+    background: white;
+    color: black;
+    border: 1px solid black;
+}

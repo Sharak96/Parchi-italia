@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risultati della Ricerca</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="menu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="parchi.html">Parchi</a></li>
+            <li><a href="flora-fauna.html">Flora e fauna</a></li>
+            <li><a href="attiv.html">Attività</a></li>
+            <li>
+                <form action="search.html" method="GET" class="search">
+                    <input type="text" name="query" placeholder="Cerca">
+                    <button type="submit">
+                        <img src="search.png" alt="Cerca">
+                    </button>
+                </form>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="search-results">
+        <h1>Risultati per: <span id="search-term"></span></h1>
+        <p class="no-results">Nessun risultato trovato.</p>
+    </main>
+
+    <script>
+        // Recupera il parametro della ricerca dall'URL
+        const params = new URLSearchParams(window.location.search);
+        const query = params.get("query");
+
+        // Mostra il termine cercato
+        document.getElementById("search-term").textContent = query;
+
+        // risultati di ricerca
+        const results = {
+            "gran paradiso": "Scopri di più sul <a href='gran-paradiso.html'>Parco Nazionale del Gran Paradiso</a>.",
+            "etna": "Scopri di più sul <a href='etna.html'>Parco dell’Etna</a>.",
+            "vulcano": "Scopri di più sul <a href='etna.html'>Parco dell’Etna</a>.", 
+            "attività": "Scopri qui le <a href='attiv.html'>Attività</a>.",
+            "attivita": "Scopri qui le <a href='attiv.html'>Attività</a>.",
+            "pollino": "Scopri di più sul <a href='pollino.html'>Parco Nazionale del Pollino</a>.", 
+            "flora": "Leggi di più su <a href='flora-fauna.html'>Flora e Fauna</a>.", 
+            "fauna": "Leggi di più su <a href='flora-fauna.html'>Flora e Fauna</a>.",
+            "flora e fauna": "Leggi di più su <a href='flora-fauna.html'>Flora e Fauna</a>.", 
+            "parchi": "Scopri i parchi qui <a href='parchi.html'>Parchi Nazionali</a>",
+            "bellunesi": "Scopri di più sul <a href='bellunesi.html'>Parco delle Dolomiti Bellunesi</a>.",
+            "bellunese": "Scopri di più sul <a href='bellunesi.html'>Parco delle Dolomiti Bellunesi</a>.",
+            "dolomiti": "Scopri di più sul <a href='bellunesi.html'>Parco delle Dolomiti Bellunesi</a>."
+        };
+
+        const resultsContainer = document.querySelector(".search-results");
+        const noResultsText = document.querySelector(".no-results");
+
+        if (query && results[query.toLowerCase()]) {
+            noResultsText.style.display = "none"; // Nasconde il messaggio "Nessun risultato trovato"
+            resultsContainer.innerHTML += `<p>${results[query.toLowerCase()]}</p>`;
+        }
+    </script>
+
+<footer class="footer">
+    
+    <a href="parchi.html" class="explore-btn">ESPLORA I PARCHI NAZIONALI</a> 
+    <div class="footer-text">
+        <p><em>Scopri le mete fantastiche che offre la natura</em></p>            
+    </div>
+    <h4> <img src="Copyright.png" alt="Copyright"> Copyright 2025 </h4>
+
+</footer>
+</body>
+</html>
