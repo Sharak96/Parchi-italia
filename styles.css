@@ -5,6 +5,11 @@ body {
     text-align: center;
 }
 
+.menu h5{
+    
+    color: #0077cc;
+}
+
 .menu {
     background: white;
     padding: 10px 20px;
@@ -19,11 +24,12 @@ body {
     z-index: 1000;
 }
 
+
 .menu ul {
     list-style: none;
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 10px;
     padding: 0;
     margin: 0;
 }
@@ -31,6 +37,8 @@ body {
 .menu ul li {
     display: flex;
     align-items: center;
+    margin: 10px;
+    
 }
 
 .menu ul li a {
@@ -96,16 +104,16 @@ body {
 }
 
 h1 {
-    font-size: clamp(2rem, 5vw, 4rem);
+    font-size: clamp(2rem, 5vw, 4rem); /*testo responsive*/
 }
 
 p {
-    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    font-size: clamp(1rem, 2.5vw, 1.5rem); /*testo responsive*/
 }
 
 .hero {
     background: url('sfondo.jpg') no-repeat center/cover;
-    height: 100vh;    
+    height: 70vh;    
     width: 100%;
     display: flex;
     justify-content: center;
@@ -132,11 +140,10 @@ p {
     font-size: 2rem;
     z-index: 1;
     max-width: 1000px;
-    padding: 20px;
+    padding: 40px;
     box-shadow: 0px 2px 5px rgba(0.5, 0.5, 0.5, 0.5);
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+   
 }
-
 .hero-text p {
     text-align: left;
 }
@@ -195,16 +202,12 @@ p {
 .keywords {
     display: flex;
     justify-content: center;
-    gap: 5px;
-    margin-top: 20px;
-  ;
+    gap: 15px;
 }
 
 .keywords p {
-    background: #8e8e8e;
-    color: white;
-    padding: 8px 25px;
-    border-radius: 5px;
+    color: rgb(0, 0, 0);
+    padding: 10px 25px;
     font-weight: bold;
 }
 
@@ -213,13 +216,18 @@ p {
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
     padding: 20px;
-    max-width: 600px;
+    max-width: 1000px;
     margin-top: 30%;
     margin: auto;
 }
 
+.gallery a:hover{
+border-color: black;
+}
+
+
 .gallery-item {
-    height: 150px;
+    height: 450px;
     background-size: cover;
     background-position: center;
     display: flex;
@@ -244,6 +252,7 @@ p {
     border-radius: 25px;
     font-size: 18px;
     transition: 0.3s;
+    position: absolute;
 }
 
 .gallery-item span:hover {
@@ -275,15 +284,19 @@ p {
     justify-content: center;
     width: 100%;
     margin-top: 20px; /* Distanza dalla sezione hero */
+    text-align: left;
+    
 }
 
 /* Stile per la sezione dei parchi */
 .parchi-list {
     display: flex;
+    margin: 20px;
     flex-direction: column;
     align-items: center;
     width: 80%;
     max-width: 900px; /* Larghezza massima */
+    text-align: left;
 }
 
 
@@ -298,6 +311,7 @@ p {
     margin: 15px 0;
     width: 100%;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1); /* Ombra leggera */
+    text-align: left;
 }
 
 /* Stile per il testo dentro il box */
@@ -306,6 +320,7 @@ p {
     font-weight: bold;
     font-family: "Arial", sans-serif;
     max-width: 50%;
+    text-align: center;
     
 }
 
@@ -358,6 +373,12 @@ p {
 
 /* Responsive per schermi piccoli */
 @media (max-width: 768px) {
+.nav {
+    flex-direction: column;
+    text-align: center;
+
+}
+
     .parco {
         flex-direction: column;
         text-align: center;
@@ -477,12 +498,14 @@ p {
     margin: 15px 0;
     width: 100%;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1); /* Ombra leggera */
+    gap: 20px;
 }
 
 .flora-image img {
-    width: 350px;
-    height: 350px;
+    width: auto;
+    height: auto;
     border-radius: 10%;
+    
 }
 
 .flora-text {
